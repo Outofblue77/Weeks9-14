@@ -16,15 +16,24 @@ public class OrderGenerator : MonoBehaviour
     public GameObject orderHotdog;
     public GameObject orderPopcorn;
 
+    public int rightFood; //Create variables in class so all voids can use them
+    public int leftFood;  //Create variables in class so all voids can use them
     public void Start()
     {
         foodOrder();
+        //Start food order
     }
-    public void foodOrder()
+    public void foodOrder()  //Void to store what food is requested and to display it
     {
-        float leftFood = Random.Range(0, 2);
-        float rightFood = Random.Range(0, 3);
-
+        leftFood = Random.Range(0, 3); //Generate a random number between 0 and 2 to assign a food
+        if (leftFood == 0) //Incase the is no food picked on the left side, new random that guarantees a food on the right
+        {
+            rightFood = Random.Range(1, 4); //Generate 1 to 3 to guarantee a food item appears
+        }
+        else
+        {
+            rightFood = Random.Range(0, 4); //Generate a randome number between 0 to 3 for a food 
+        }
         /////////////////////////////////
         //Making the correct left food appear according to the variable
         if (leftFood == 0)
@@ -68,5 +77,17 @@ public class OrderGenerator : MonoBehaviour
             orderFries.SetActive(false);
             orderHotdog.SetActive(false);
         }
+    }
+
+    public void foodSubmitted () //Void to reset the variables and hide all the objects 
+    {
+        leftFood = 0;
+        rightFood = 0;
+
+        orderBurger.SetActive(false);
+        orderDrink.SetActive(false);
+        orderFries.SetActive(false);
+        orderHotdog.SetActive(false);
+        orderPopcorn.SetActive(false);
     }
 }
