@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class CustomerMovement : MonoBehaviour
 {
-    public Image uiCharacter; //Creating a placeholder to add the ui object to
+    //public Image uiCharacterA; 
+    //public Image uiCharacterB;
+
     public float speed = 0;   //Creating a placeholder to control the speed
     public float distance;    //Track placement and movent through unity ui
 
-    private RectTransform rectTransform; //Stores transform f the ui component
+    private RectTransform rectTransform; //Stores transform of the ui component
 
     public void clicked()   //New void to call on when the character is clicked on
     {
