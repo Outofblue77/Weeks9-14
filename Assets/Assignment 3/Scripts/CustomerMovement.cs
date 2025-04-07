@@ -6,9 +6,13 @@ using UnityEngine.UI;
 
 public class CustomerMovement : MonoBehaviour
 {
+
     //public Image uiCharacterA; 
     //public Image uiCharacterB;
+    
     public GameObject bubble; //Call displaybubblle to turn on
+
+    
 
     public OrderGenerator generateFood;
 
@@ -61,4 +65,5 @@ public class CustomerMovement : MonoBehaviour
 
         IsWalking = false;
     }
+
 }
