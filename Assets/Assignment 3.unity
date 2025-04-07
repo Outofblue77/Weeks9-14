@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 1679249743}
+  generateFood: {fileID: 1704974748}
   speed: 300
   distance: 0
   startPosition: {x: 0, y: 0}
@@ -2046,18 +2047,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1704974748}
-          m_TargetAssemblyTypeName: OrderGenerator, Assembly-CSharp
-          m_MethodName: foodOrder
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1556646323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,6 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 1679249743}
+  generateFood: {fileID: 1704974748}
   speed: 300
   distance: 0
   startPosition: {x: 0, y: 0}
@@ -2344,6 +2334,8 @@ MonoBehaviour:
   orderFries: {fileID: 776542623}
   orderHotdog: {fileID: 151064016}
   orderPopcorn: {fileID: 569092523}
+  rightFood: 0
+  leftFood: 0
 --- !u!4 &1704974749
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodAppearing : MonoBehaviour
 {
+    public FoodOnTray foodOnTrayScript;  //Call score script to modify the value
+
     public GameObject burger;
     public GameObject drink;
     void Start()
@@ -17,11 +19,13 @@ public class FoodAppearing : MonoBehaviour
         if (burger.activeSelf)
         {
             burger.SetActive(false);
+            foodOnTrayScript.leftFoodTrayItem = 0; //Make tray value back to 0
         }
         else
         {
             burger.SetActive(true);
             drink.SetActive(false);
+            foodOnTrayScript.leftFoodTrayItem = 2; //Make tray value back to 0
         }
     }
 }
