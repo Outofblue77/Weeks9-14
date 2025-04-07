@@ -15,6 +15,8 @@ public class CustomerMovement : MonoBehaviour
     public float speed = 0;   //Creating a placeholder to control the speed
     public float distance = 0f;    //Track placement and movent through unity ui
 
+    public bool IsWalking = false; //Set bool to make sure player can't click same cycle twice
+
     public Vector2 startPosition; //Vector to track and set a customer position before they enter the screen
     private RectTransform character; //Stores transform of the ui component
 
@@ -25,13 +27,18 @@ public class CustomerMovement : MonoBehaviour
 
     public void clicked()   //New void to call on when the character is clicked on
     {
-        generateFood.foodSubmitted();
-        character = GetComponent<RectTransform>(); //get the UI Image 
-                StartCoroutine(moveLeft());  //Call to start the coroutine
+        if (!IsWalking)
+        { 
+            generateFood.foodSubmitted();
+            character = GetComponent<RectTransform>(); //get the UI Image 
+            StartCoroutine(moveLeft());  //Call to start the coroutine
+        }
     }
 
     public IEnumerator moveLeft()  //Call to use coroutine
     {
+        IsWalking = true;
+        
         distance = 0f; //Set loop to start at 0
         
         while (distance < 545) //Loop to move character. 550 indicating distance
@@ -51,5 +58,7 @@ public class CustomerMovement : MonoBehaviour
         {
             character.anchoredPosition = startPosition; //Teleport customer back to starting position (off screen left sode)
         }
+
+        IsWalking = false;
     }
 }

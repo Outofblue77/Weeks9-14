@@ -472,6 +472,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1090943979}
+          m_TargetAssemblyTypeName: CheckingAnswer, Assembly-CSharp
+          m_MethodName: checkScore
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 193522139}
           m_TargetAssemblyTypeName: CustomerMovement, Assembly-CSharp
           m_MethodName: clicked
@@ -537,6 +549,7 @@ MonoBehaviour:
   generateFood: {fileID: 1704974748}
   speed: 300
   distance: 0
+  IsWalking: 0
   startPosition: {x: 0, y: 0}
 --- !u!114 &193522140
 MonoBehaviour:
@@ -841,6 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e93b49804776148abf0e6416b8ee76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodOnTrayScript: {fileID: 1168664850}
   fries: {fileID: 230466875}
   hotdog: {fileID: 589606559}
   popcorn: {fileID: 1768463427}
@@ -1094,6 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe19154307388a848ad79745ad5a8589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodOnTrayScript: {fileID: 1168664850}
   fries: {fileID: 230466875}
   hotdog: {fileID: 589606559}
   popcorn: {fileID: 1768463427}
@@ -1347,6 +1362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6f090f49773074489b855145173a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodOnTrayScript: {fileID: 1168664850}
   burger: {fileID: 688742653}
   drink: {fileID: 432718277}
 --- !u!1 &569092523
@@ -1851,8 +1867,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036946c851a53bb41a62c761eebc8ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodOnTrayScript: {fileID: 1168664850}
   burger: {fileID: 688742653}
   drink: {fileID: 432718277}
+--- !u!1 &1090943978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090943980}
+  - component: {fileID: 1090943979}
+  m_Layer: 0
+  m_Name: CheckScoreEmpt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1090943979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090943978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155d33d27404694d865f8f9e3b1f821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderGenerator: {fileID: 1704974748}
+  foodOnTray: {fileID: 1168664850}
+  playerScore: {fileID: 1775232211}
+  customerWalking: {fileID: 1556646326}
+--- !u!4 &1090943980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090943978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 570.80786, y: 462.67203, z: -2.9959643}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1168664849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168664851}
+  - component: {fileID: 1168664850}
+  m_Layer: 0
+  m_Name: YourFoodTrayScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1168664850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168664849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b117a4e312d474baa9d076c99ba0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftFoodTrayItem: 0
+  rightFoodTrayItem: 0
+--- !u!4 &1168664851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168664849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21552952, y: 0.13107502, z: -0.030132081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546386672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2122,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1090943979}
+          m_TargetAssemblyTypeName: CheckingAnswer, Assembly-CSharp
+          m_MethodName: checkScore
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1556646326}
           m_TargetAssemblyTypeName: CustomerMovement, Assembly-CSharp
           m_MethodName: clicked
@@ -2116,6 +2239,7 @@ MonoBehaviour:
   generateFood: {fileID: 1704974748}
   speed: 300
   distance: 0
+  IsWalking: 0
   startPosition: {x: 0, y: 0}
 --- !u!114 &1556646327
 MonoBehaviour:
@@ -2327,8 +2451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75323884fe512a946a1e0eadefa002ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftFoodRequest: 0
-  rightFoodRequest: 0
   orderDrink: {fileID: 1685137224}
   orderBurger: {fileID: 405500695}
   orderFries: {fileID: 776542623}
@@ -2517,6 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c828d056852e934885fb0a1b0083d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodOnTrayScript: {fileID: 1168664850}
   fries: {fileID: 230466875}
   hotdog: {fileID: 589606559}
   popcorn: {fileID: 1768463427}
@@ -2604,6 +2727,155 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1775232207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775232208}
+  - component: {fileID: 1775232210}
+  - component: {fileID: 1775232211}
+  - component: {fileID: 1775232209}
+  m_Layer: 5
+  m_Name: ScoreValue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1775232208
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775232207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2128812536}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 304, y: 279}
+  m_SizeDelta: {x: 164.0834, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1775232209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775232207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -73.82471, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1775232210
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775232207}
+  m_CullTransparentMesh: 1
+--- !u!114 &1775232211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775232207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f873b65dc5b2184b9ef6bc02f242d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: {fileID: 1775232209}
+  value: 0
 --- !u!1 &2128812532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2953,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2705,6 +2977,7 @@ RectTransform:
   - {fileID: 1743724519}
   - {fileID: 409434059}
   - {fileID: 236663035}
+  - {fileID: 1775232208}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2732,3 +3005,5 @@ SceneRoots:
   - {fileID: 776542625}
   - {fileID: 151064018}
   - {fileID: 569092525}
+  - {fileID: 1168664851}
+  - {fileID: 1090943980}
