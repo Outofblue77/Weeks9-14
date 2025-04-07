@@ -6,8 +6,7 @@ using UnityEngine.UIElements;
 public class OrderGenerator : MonoBehaviour
 {   
     //Variables to store the data of what food is being requested
-    public float leftFoodRequest;   //0 = nothing || 1 = Drink || 2 = Burger
-    public float rightFoodRequest;  //0 = nothing || 1 = Fries || 2 = Hotdog || 3 = Popcorn
+    
 
     public GameObject orderDrink;
     public GameObject orderBurger;
@@ -16,8 +15,11 @@ public class OrderGenerator : MonoBehaviour
     public GameObject orderHotdog;
     public GameObject orderPopcorn;
 
+    //Variables to store the data of what food is being requested
     public int rightFood; //Create variables in class so all voids can use them
     public int leftFood;  //Create variables in class so all voids can use them
+    //0 = nothing || 1 = Drink || 2 = Burger
+    //0 = nothing || 1 = Fries || 2 = Hotdog || 3 = Popcorn
     public void Start()
     {
         foodOrder();
